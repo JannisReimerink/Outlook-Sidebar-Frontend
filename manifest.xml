@@ -15,7 +15,7 @@
   <Description DefaultValue="Phase 1: Liest Vertragsdaten aus der PAP (Sterling Exchange) fuer die aktuell geoeffnete Fuel-Release-Anfrage und zeigt einen Vorschlag zur manuellen Freigabe." />
   <IconUrl DefaultValue="https://proud-meadow-0d55e7610.7.azurestaticapps.net/assets/icon-32.png" />
   <HighResIconUrl DefaultValue="https://proud-meadow-0d55e7610.7.azurestaticapps.net/assets/icon-128.png" />
-  <SupportUrl DefaultValue="mailto:it@fuel-more.com" />
+  <SupportUrl DefaultValue="https://fuel-more.com" />
 
   <!-- Alle Domains, von denen Inhalte geladen werden -->
   <AppDomains>
