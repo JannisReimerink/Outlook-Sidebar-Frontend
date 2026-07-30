@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="MailApp">
+
+  <!-- Eindeutige, feste ID -- bei Umbenennung NICHT ändern, sonst neue Installation nötig -->
+  <Id>2da32700-4433-47c0-ad65-341e2b5f66f0</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Fuel &amp; More Consult GmbH</ProviderName>
+  <DefaultLocale>de-DE</DefaultLocale>
+  <DisplayName DefaultValue="FMC Fuel Release Agent" />
+  <Description DefaultValue="Phase 1: Liest Vertragsdaten aus der PAP (Sterling Exchange) fuer die aktuell geoeffnete Fuel-Release-Anfrage und zeigt einen Vorschlag zur manuellen Freigabe." />
+  <IconUrl DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/assets/icon-32.png" />
+  <HighResIconUrl DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/assets/icon-128.png" />
+  <SupportUrl DefaultValue="mailto:it@fuel-more.com" />
+
+  <!-- Alle Domains, von denen Inhalte geladen werden -->
+  <AppDomains>
+    <AppDomain>https://REPLACE_WITH_HOSTING_DOMAIN</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.5" />
+    </Sets>
+  </Requirements>
+
+  <!-- Fallback fuer sehr alte Clients: einfache Taskpane ohne Ribbon-Button -->
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/taskpane.html" />
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadItem</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.5">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+
+          <!-- Ribbon-Button beim Lesen einer Mail: oeffnet die Seitenleiste -->
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="fmcFuelAgentGroup">
+                <Label resid="groupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="icon16" />
+                  <bt:Image size="32" resid="icon32" />
+                  <bt:Image size="80" resid="icon80" />
+                </Icon>
+                <Control xsi:type="Button" id="fmcFuelAgentButton">
+                  <Label resid="buttonLabel" />
+                  <Supertip>
+                    <Title resid="buttonLabel" />
+                    <Description resid="buttonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/assets/icon-16.png" />
+        <bt:Image id="icon32" DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/assets/icon-32.png" />
+        <bt:Image id="icon80" DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="taskpaneUrl" DefaultValue="https://REPLACE_WITH_HOSTING_DOMAIN/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="FMC Fuel Agent" />
+        <bt:String id="buttonLabel" DefaultValue="PAP-Lookup" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="buttonTooltip" DefaultValue="PAP-Vertragsdaten fuer diese Anfrage nachschlagen (Phase 1: nur lesen und vorschlagen)" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,145 @@
+:root {
+  --fmc-blue: #004a7c;
+  --fmc-blue-light: #e8f1f7;
+  --fmc-red: #b3261e;
+  --fmc-amber: #8a6100;
+  --fmc-amber-bg: #fff4d6;
+  --text: #1a1a1a;
+  --border: #d5dbe0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  margin: 0;
+  padding: 0 16px 24px 16px;
+  color: var(--text);
+  font-size: 13px;
+  background: #ffffff;
+}
+
+header {
+  padding: 16px 0 8px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0;
+  color: var(--fmc-blue);
+}
+
+.phase-badge {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  color: #666;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+button#lookupBtn {
+  margin-top: 14px;
+  width: 100%;
+  padding: 9px;
+  background: var(--fmc-blue);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button#lookupBtn:hover { background: #003a63; }
+button#lookupBtn:disabled { background: #9aa7ae; cursor: not-allowed; }
+
+.hint {
+  font-size: 11px;
+  color: #666;
+  margin-top: 6px;
+  min-height: 14px;
+}
+
+#status-section {
+  margin-top: 16px;
+  padding: 10px 12px;
+  background: var(--fmc-blue-light);
+  border-radius: 4px;
+}
+
+.hidden { display: none !important; }
+
+#flagBanner {
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+#flagBanner.flag-warning {
+  background: var(--fmc-amber-bg);
+  color: var(--fmc-amber);
+  border: 1px solid #e0c060;
+}
+
+#flagBanner.flag-blocked {
+  background: #fbe4e2;
+  color: var(--fmc-red);
+  border: 1px solid #e4a8a3;
+}
+
+h2 {
+  font-size: 13px;
+  color: var(--fmc-blue);
+  margin: 18px 0 6px 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+}
+
+table.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+table.result-table th, table.result-table td {
+  text-align: left;
+  padding: 5px 6px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table.result-table > tbody > tr > th {
+  width: 40%;
+  font-weight: 600;
+  color: #444;
+}
+
+#optionsTable thead th {
+  background: var(--fmc-blue-light);
+  font-weight: 600;
+}
+
+.disclaimer {
+  margin-top: 18px;
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}

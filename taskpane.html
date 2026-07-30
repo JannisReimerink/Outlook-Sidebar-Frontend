@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>FMC Fuel Release Agent</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header>
+    <h1>FMC Fuel Release Agent</h1>
+    <p class="phase-badge">Phase 1 &middot; nur lesen &amp; vorschlagen</p>
+  </header>
+
+  <main id="app">
+
+    <section id="input-section">
+      <label for="acReg">A/C-REG</label>
+      <input type="text" id="acReg" placeholder="z. B. D-ABCD" autocomplete="off" />
+
+      <label for="airport">Airport (ICAO oder IATA)</label>
+      <input type="text" id="airport" placeholder="z. B. EDDF oder FRA" autocomplete="off" />
+
+      <button id="lookupBtn">PAP-Lookup starten</button>
+      <p id="autofill-hint" class="hint"></p>
+    </section>
+
+    <section id="status-section" class="hidden">
+      <p id="statusText"></p>
+    </section>
+
+    <section id="result-section" class="hidden">
+
+      <div id="flagBanner" class="hidden"></div>
+
+      <h2>Empfehlung (Zeile 6)</h2>
+      <table class="result-table">
+        <tbody>
+          <tr><th>Kunde</th><td id="r-kunde">-</td></tr>
+          <tr><th>A/C-Type</th><td id="r-actype">-</td></tr>
+          <tr><th>Supplier</th><td id="r-supplier">-</td></tr>
+          <tr><th>Netto [CAG]</th><td id="r-netto">-</td></tr>
+          <tr><th>Total [CAG]</th><td id="r-total">-</td></tr>
+          <tr><th>Total [EUR/ltr]</th><td id="r-totaleur">-</td></tr>
+          <tr><th>Payment / Card</th><td id="r-payment">-</td></tr>
+          <tr><th>Intoplane</th><td id="r-intoplane">-</td></tr>
+          <tr><th>Basis</th><td id="r-basis">-</td></tr>
+          <tr><th>Add-on</th><td id="r-addon">-</td></tr>
+          <tr><th>Remarks</th><td id="r-remarks">-</td></tr>
+          <tr><th>Validity</th><td id="r-validity">-</td></tr>
+          <tr><th>Treffer</th><td id="r-treffer">-</td></tr>
+        </tbody>
+      </table>
+
+      <div id="optionsBlock" class="hidden">
+        <h2>Weitere Optionen (Zeile 7&ndash;10)</h2>
+        <table class="result-table" id="optionsTable">
+          <thead>
+            <tr><th>Supplier</th><th>Total [CAG]</th><th>Payment/Card</th><th>Remarks</th></tr>
+          </thead>
+          <tbody id="optionsTableBody"></tbody>
+        </table>
+      </div>
+
+      <p class="disclaimer">
+        Dies ist ein Vorschlag auf Basis der PAP &mdash; keine Aktion wurde ausgelöst.
+        Freigabe, Auswahl bei mehreren Optionen und Versand erfolgen weiterhin manuell durch dich.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>

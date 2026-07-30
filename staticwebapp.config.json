@@ -1,0 +1,9 @@
+{
+  "navigationFallback": {
+    "rewrite": null,
+    "exclude": ["/assets/*", "*.{html,css,js,xml,png}"]
+  },
+  "mimeTypes": {
+    ".xml": "application/xml"
+  }
+}
