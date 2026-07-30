@@ -6,7 +6,7 @@
     xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
     xsi:type="MailApp">
 
-  <!-- Eindeutige, feste ID -- bei Umbenennung NICHT ändern, sonst neue Installation nötig -->
+  <!-- Eindeutige, feste ID: bei Umbenennung NICHT ändern, sonst neue Installation nötig -->
   <Id>2da32700-4433-47c0-ad65-341e2b5f66f0</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Fuel &amp; More Consult GmbH</ProviderName>
