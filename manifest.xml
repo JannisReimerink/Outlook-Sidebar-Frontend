@@ -14,7 +14,7 @@
   <DisplayName DefaultValue="FMC Fuel Release Agent" />
   <Description DefaultValue="Phase 1: Liest Vertragsdaten aus der PAP (Sterling Exchange) fuer die aktuell geoeffnete Fuel-Release-Anfrage und zeigt einen Vorschlag zur manuellen Freigabe." />
   <IconUrl DefaultValue="https://proud-meadow-0d55e7610.7.azurestaticapps.net/assets/icon-32.png" />
-  <HighResIconUrl DefaultValue="https://proud-meadow-0d55e7610.7.azurestaticapps.net/assets/icon-64.png" />
+  <HighResolutionIconUrl DefaultValue="https://proud-meadow-0d55e7610.7.azurestaticapps.net/assets/icon-64.png" />
   <SupportUrl DefaultValue="https://fuel-more.com" />
 
   <!-- Alle Domains, von denen Inhalte geladen werden -->
