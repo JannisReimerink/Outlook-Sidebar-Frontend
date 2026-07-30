@@ -66,11 +66,6 @@
             <OfficeTab id="TabDefault">
               <Group id="fmcFuelAgentGroup">
                 <Label resid="groupLabel" />
-                <Icon>
-                  <bt:Image size="16" resid="icon16" />
-                  <bt:Image size="32" resid="icon32" />
-                  <bt:Image size="80" resid="icon80" />
-                </Icon>
                 <Control xsi:type="Button" id="fmcFuelAgentButton">
                   <Label resid="buttonLabel" />
                   <Supertip>
